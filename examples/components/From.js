@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 
-import JoditEditor from "../../src/";
+import JoditEditor from "../../src/JoditEditor";
 
 export default class From extends Component {
     state = {
         config: {
             readonly: false,
+            iframe: true,
+            iframeStyle: '',
         },
         value: 'Test'
     };

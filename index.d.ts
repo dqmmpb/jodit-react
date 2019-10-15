@@ -3,6 +3,7 @@ import * as React from "react";
 export interface JoditProps {
     value: string;
     onChange(value: string): void;
+    onBlur(value: string): void;
     config: any;
 }
 
