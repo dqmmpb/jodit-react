@@ -21,10 +21,10 @@ body {
   flex-direction: column;
 }
 
-header,
+/*header,
 #main_container {
   flex: 1 0 auto;
-}
+}*/
 
 .jodit_wysiwyg {
   color: #000;

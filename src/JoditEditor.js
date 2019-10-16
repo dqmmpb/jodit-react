@@ -14,21 +14,11 @@ const JoditEditor = forwardRef(({value, config, onChange, onBlur, tabIndex}, ref
     onChange && onChange(value);
   };
 
-  useLayoutEffect(() => {
-    if (ref) {
-      if (typeof ref === 'function') {
-        ref(textArea.current);
-      } else {
-        ref.current = textArea.current;
-      }
-    }
-  }, [textArea]);
-
   useEffect(() => {
     textArea.current = new Jodit(textArea.current, config);
     textArea.current.value = value
     textArea.current.events.on('blur', () => blurHandler(textArea.current.value));
-    textArea.current.events.on('change', (a) => {
+    textArea.current.events.on('change', () => {
       changeHandler(textArea.current.value)
     });
     textArea.current.workplace.tabIndex = tabIndex || -1;
@@ -39,18 +29,6 @@ const JoditEditor = forwardRef(({value, config, onChange, onBlur, tabIndex}, ref
   }, []);
 
   useEffect(() => {
-    if (textArea && textArea.current) {
-      textArea.current.value = value;
-    }
-  }, [textArea, value]);
-
-  useEffect(() => {
-    if (ref) {
-      if (typeof ref === 'function') {
-        ref(textArea.current, config);
-        return;
-      }
-    }
     if(typeof config.readonly !== 'undefined') {
       textArea.current.setReadOnly(config.readonly);
     }

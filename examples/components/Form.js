@@ -10,9 +10,14 @@ export default class Form extends Component {
     }
   };
 
+  refEl = (el) => {
+    this.editor = el;
+  };
+
   render() {
     const {value, config} = this.props;
     return <JoditEditor
+      ref={this.refEl}
       value={value}
       config={{...config}}
       onChange={this.onChange}
