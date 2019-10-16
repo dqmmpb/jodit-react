@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'jodit/build/jodit.min.css';
-import From from "./components/From";
+import FormWrapper from "./components/FormWrapper";
 
 
-ReactDOM.render(<From/>, document.getElementById('editor'));
+ReactDOM.render(<FormWrapper/>, document.getElementById('editor'));
