@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, forwardRef, useLayoutEffect} from 'react'
 import PropTypes from 'prop-types'
-import Jodit from 'jodit/build/jodit'
+import Jodit from 'jodit'
 import 'jodit/build/jodit.min.css'
 
 const JoditEditor = forwardRef(({value, config, onChange, onBlur}, ref) => {

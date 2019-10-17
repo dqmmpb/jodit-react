@@ -19,6 +19,7 @@
     "@types/react": "^16.8.7"
   },
   "peerDependencies": {
+    "jodit": "git+http://qn@git.izaiqi.com/scm/qndms/jodit.git",
     "react": "~0.14 || ^15.0.0 || ^16.0.0",
     "react-dom": "~0.14 || ^15.0.0 || ^16.0.0"
   },
@@ -30,7 +31,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
-    "jodit": "git+http://qn@git.izaiqi.com/scm/qndms/jodit.git",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "style-loader": "^0.20.3",
