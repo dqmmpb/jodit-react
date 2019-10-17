@@ -8,7 +8,7 @@ export default class FormWrapper extends Component {
       readonly: false,
       iframe: true,
       height: 500,
-      iframeStyle: 'html{overflow-y: auto !important}p{margin: 0 0 1em 0}',
+      iframeStyle: 'html{overflow-y: auto !important}.jodit table.jodit_table{width:100%;border:0;border-collapse:collapse;empty-cells:show;max-width:100%}.jodit table.jodit_table th,.jodit table.jodit_table td{padding:2px 5px;border:1px solid #ccc;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}.jodit table.jodit_table td[data-jodit-selected-cell],.jodit table.jodit_table th[data-jodit-selected-cell]{border:1px double #1e88e5}',
     },
     value: 'Hello world!',
   };
