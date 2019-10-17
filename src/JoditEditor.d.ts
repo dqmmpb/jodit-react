@@ -8,6 +8,6 @@ declare module 'jodit-react' {
     onBlur: (newValue: string) => void;
   }
 
-  const JoditEditor: React.ComponentType<IJoditEditorProps>
+  const JoditEditor: React.ComponentType<IJoditEditorProps>;
   export default JoditEditor;
 }

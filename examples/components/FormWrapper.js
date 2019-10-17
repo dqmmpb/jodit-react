@@ -7,23 +7,15 @@ export default class FormWrapper extends Component {
     config: {
       readonly: false,
       iframe: true,
-      iframeStyle: '',
+      height: 500,
+      iframeStyle: 'html{overflow-y: auto !important}p{margin: 0 0 1em 0}',
     },
-    value: '',
-    content: '',
+    value: 'Hello world!',
   };
   toggleReadOnly = () => {
-    this.setState(prevState => {
-      let config = {
-        ...prevState.config,
-        readonly: !prevState.config.readonly
-      };
-
-      return {
-        config: config,
-        value: prevState.value
-      }
-    });
+    if(this.editor) {
+      this.editor.toggleReadOnly();
+    }
   };
   onChange = (value) => {
     this.setState(prevState => ({
@@ -32,14 +24,26 @@ export default class FormWrapper extends Component {
     }));
   };
 
+  refEl = (el) => {
+    this.editor = el;
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        value: 'Hello Sam!',
+      })
+    }, 1000);
+  }
   render() {
-    return <div>
+    return <React.Fragment>
       <Form
+        ref={this.refEl}
         value={this.state.value}
         config={this.state.config}
         onChange={this.onChange}
       />
       <button type="button" onClick={this.toggleReadOnly}>Toggle Read-Only</button>
-    </div>
+    </React.Fragment>
   };
 }
