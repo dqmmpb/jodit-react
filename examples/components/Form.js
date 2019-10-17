@@ -26,7 +26,7 @@ export default class Form extends Component {
     return <JoditEditor
       ref={this.editor}
       value={value}
-      config={{...config}}
+      config={config}
       onChange={this.onChange}
     />
   };
