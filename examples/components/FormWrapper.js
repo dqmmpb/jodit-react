@@ -125,11 +125,18 @@ export default class FormWrapper extends Component {
     },
     value: 'Hello world!',
   };
+  constructor(props) {
+    super(props);
+    this.editor = React.createRef();
+  }
   toggleReadOnly = () => {
     if(this.editor) {
-      this.editor.toggleReadOnly();
+      console.log(this.editor.current);
+      this.editor.current.setReadOnly(!this.editor.current.getReadOnly());
+      this.editor.current.selection.insertHTML('<div>123123</div>')
     }
   };
+
   onChange = (value) => {
     this.setState(prevState => ({
       config: prevState.config,
@@ -138,6 +145,7 @@ export default class FormWrapper extends Component {
   };
 
   refEl = (el) => {
+    console.log(1111111, el)
     this.editor = el;
   };
 
@@ -151,7 +159,7 @@ export default class FormWrapper extends Component {
   render() {
     return <React.Fragment>
       <Form
-        ref={this.refEl}
+        refEl={this.refEl}
         value={this.state.value}
         config={this.state.config}
         onChange={this.onChange}

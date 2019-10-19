@@ -16,10 +16,10 @@
     "rte"
   ],
   "dependencies": {
-    "@types/react": "^16.8.7"
+    "@types/react": "^16.8.7",
+    "jodit": "git+http://qn@git.izaiqi.com/scm/qndms/jodit.git"
   },
   "peerDependencies": {
-    "jodit": "git+http://qn@git.izaiqi.com/scm/qndms/jodit.git",
     "react": "~0.14 || ^15.0.0 || ^16.0.0",
     "react-dom": "~0.14 || ^15.0.0 || ^16.0.0"
   },
