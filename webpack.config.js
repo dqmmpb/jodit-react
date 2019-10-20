@@ -22,11 +22,11 @@ module.exports = {
     ]
   },
 
-  resolve: {
+  /*resolve: {
     alias: {
       "jodit-react": './src'
     },
-  },
+  },*/
 
   output: {
     path: path.join(__dirname, '/build/'),
