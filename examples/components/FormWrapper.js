@@ -149,7 +149,6 @@ export default class FormWrapper extends Component {
   };
 
   refEl = (el) => {
-    console.log(1111111, el)
     this.editor = el;
   };
 
