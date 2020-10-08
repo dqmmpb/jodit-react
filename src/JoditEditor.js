@@ -14,6 +14,19 @@ const JoditEditor = forwardRef(({value, config, onChange, onBlur}, ref) => {
   };
 
   useLayoutEffect(() => {
+    textArea.current = new Jodit(textArea.current, config);
+    textArea.current.value = value;
+    textArea.current.events.on('blur', () => blurHandler(textArea.current.value));
+    textArea.current.events.on('change', (a) => {
+      changeHandler(textArea.current.value)
+    });
+
+    return () => {
+      textArea.current.destruct();
+    }
+  }, []);
+
+  useLayoutEffect(() => {
     if (ref) {
       if (typeof ref === 'function') {
         ref(textArea);
@@ -28,19 +41,6 @@ const JoditEditor = forwardRef(({value, config, onChange, onBlur}, ref) => {
       textArea.current.value = value;
     }
   }, [value]);
-
-  useEffect(() => {
-    textArea.current = new Jodit(textArea.current, config);
-    textArea.current.value = value;
-    textArea.current.events.on('blur', () => blurHandler(textArea.current.value));
-    textArea.current.events.on('change', (a) => {
-      changeHandler(textArea.current.value)
-    });
-
-    return () => {
-      textArea.current.destruct();
-    }
-  }, []);
 
   return <textarea ref={textArea}></textarea>
 });
