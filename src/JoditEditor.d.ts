@@ -2,10 +2,11 @@ import * as React from 'react';
 
 declare module 'jodit-react' {
   export interface IJoditEditorProps {
-    value: string,
-    config?: object,
+    value: string;
+    config?: object;
     onChange: (newValue: string) => void;
     onBlur: (newValue: string) => void;
+    ref?: any;
   }
 
   const JoditEditor: React.ComponentType<IJoditEditorProps>;
